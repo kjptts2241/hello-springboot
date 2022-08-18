@@ -20,11 +20,13 @@ var main = {
             contentType: 'application/json; charset-utf-8',
             data: JSON.stringify(data)
         }).done(function (data) {
-            if (data == 1) {
-                alert("메뉴를 추가 했습니다");
-            } else {
-                alert("메뉴를 추가 실패\n관리자에게 문의");
-            }
+            // if (data == 1) {
+            //     alert("메뉴를 추가 했습니다");
+            // } else {
+            //     alert("메뉴를 추가 실패\n관리자에게 문의");
+            // }
+            //window.location.href = '/';
+            alert(data);
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });

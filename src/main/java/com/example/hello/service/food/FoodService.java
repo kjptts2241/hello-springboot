@@ -24,7 +24,7 @@ public class FoodService {
     }
 
     @Transactional
-    public TbFood save(FoodSaveRequestDto requestDto) {
-        return tbFoodRepository.save(requestDto.toEntity());
+    public Long save(FoodSaveRequestDto requestDto) {
+        return tbFoodRepository.save(requestDto.toEntity()).getId();
     }
 }

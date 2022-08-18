@@ -15,18 +15,9 @@ public class SearchController {
 
     private final SearchService searchService;
 
-    @PostMapping("/api/v1/search")
-    public Long save(@RequestBody SearchSaveRequestDto requestDto) {
-        return searchService.save(requestDto);
-    }
-
-//    @GetMapping("/api/v1/searchlist")
-//    public List<TbSearch> searchList() {
-//        return searchService.findAll();
-//    }
-
-    @PostMapping("/api/v1/news")
-    public String news(@RequestBody SearchSaveRequestDto requestDto) {
+    @PostMapping("/api/v1/saveOrNews")
+    public String saveOrNews(@RequestBody SearchSaveRequestDto requestDto) {
+        searchService.save(requestDto);
         return searchService.news(requestDto);
     }
 }
