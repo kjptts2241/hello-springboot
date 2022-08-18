@@ -3,6 +3,7 @@ package com.example.hello;
 import com.example.hello.domain.TbFood;
 import com.example.hello.domain.TbSearch;
 import com.example.hello.service.food.FoodService;
+import com.example.hello.service.movie.MovieService;
 import com.example.hello.service.search.SearchService;
 import com.example.hello.utils.MovieApi;
 import com.example.hello.web.dto.FoodSaveRequestDto;
@@ -19,6 +20,7 @@ public class indexController {
 
     private final SearchService searchService;
     private final FoodService foodService;
+    private final MovieService movieService;
 
     @GetMapping("/")
     public String index() {
@@ -52,8 +54,8 @@ public class indexController {
     }
 
     @GetMapping("/movie")
-    public String movie(Model model) {
-        List<String> movielist = MovieApi.movieApi();
+    public String movieList(Model model) {
+        List<String> movielist = movieService.movieList();
         model.addAttribute("movielist", movielist);
         return "movie";
     }

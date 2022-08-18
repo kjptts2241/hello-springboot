@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FoodController {
 
-    private FoodService foodService;
+    private final FoodService foodService;
 
     @PostMapping("/api/v1/foodsave")
     public Long foodSave(@RequestBody FoodSaveRequestDto requestDto) {
