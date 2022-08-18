@@ -1,0 +1,13 @@
+{{>layout/header}}
+
+<h2>음식 추천</h2>
+
+<div>
+    {{ #foodrand }}
+    <p>추천 : {{name}}</p>
+    <img src="{{img}}" class="rounded" alt="{{name}}" width="640" height="480">
+    {{/foodrand}}
+</div>
+
+</body>
+</html>

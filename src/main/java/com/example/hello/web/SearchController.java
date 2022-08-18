@@ -1,5 +1,6 @@
 package com.example.hello.web;
 
+import com.example.hello.domain.TbSearch;
 import com.example.hello.service.search.SearchService;
 import com.example.hello.web.dto.SearchSaveRequestDto;
 import lombok.RequiredArgsConstructor;

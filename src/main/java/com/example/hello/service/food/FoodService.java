@@ -5,6 +5,8 @@ import com.example.hello.domain.repository.TbFoodRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class FoodService {
@@ -13,5 +15,9 @@ public class FoodService {
 
     public TbFood findFoodRand() {
         return tbFoodRepository.findFoodRand();
+    }
+
+    public List<TbFood> findAll() {
+        return tbFoodRepository.findAll();
     }
 }

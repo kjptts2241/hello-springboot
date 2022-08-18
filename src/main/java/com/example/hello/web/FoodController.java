@@ -12,9 +12,11 @@ public class FoodController {
 
     private FoodService foodService;
 
-    @GetMapping("/api/v1/randfood")
-    public TbFood randFood() {
-        return foodService.findFoodRand();
-    }
+//    @GetMapping("/api/v1/foodrand")
+//    public TbFood foodRand() {
+//        return foodService.findFoodRand();
+//    }
+
+
 
 }

@@ -18,7 +18,14 @@ public class SearchService {
 
     @Transactional
     public Long save(SearchSaveRequestDto requestDto) {
-        return tbSearchRepository.save(requestDto.toEntity()).getId();
+        String result  = tbSearchRepository.findSearch(requestDto.getSearch());
+        if (result == null) {
+            Long searchCheck = tbSearchRepository.save(requestDto.toEntity()).getId();
+            return searchCheck;
+        } else {
+            Long searchCheck = tbSearchRepository.saveCnt(requestDto.getSearch());
+            return searchCheck;
+        }
     }
 
     public List<TbSearch> findAll() {
