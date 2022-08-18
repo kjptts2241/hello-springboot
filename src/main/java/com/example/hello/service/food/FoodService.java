@@ -2,9 +2,11 @@ package com.example.hello.service.food;
 
 import com.example.hello.domain.TbFood;
 import com.example.hello.domain.repository.TbFoodRepository;
+import com.example.hello.web.dto.FoodSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,5 +21,10 @@ public class FoodService {
 
     public List<TbFood> findAll() {
         return tbFoodRepository.findAll();
+    }
+
+    @Transactional
+    public TbFood save(FoodSaveRequestDto requestDto) {
+        return tbFoodRepository.save(requestDto.toEntity());
     }
 }

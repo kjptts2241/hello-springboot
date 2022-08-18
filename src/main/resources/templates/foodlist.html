@@ -2,6 +2,10 @@
 
 <h2>음식 리스트</h2>
 
+<div align="left">
+  <button type="button" class="btn btn-danger" id="myBtn">메뉴추가</button>
+</div>
+
 <div>
   <table class="table table-dark table-hover">
     <thead>
@@ -20,6 +24,43 @@
     </tbody>
   </table>
 </div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:black">메뉴추가</h4>
+
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div id="form">
+          <div class="form-group">
+            <label for="menuname">메뉴:</label>
+            <input type="text" class="form-control" id="menuname" placeholder="메뉴 이름" name="menuname">
+          </div>
+          <div class="form-group">
+            <label for="imgsrc">이미지:</label>
+            <input type="text" class="form-control" id="imgsrc" placeholder="이미지 주소" name="imgsrc">
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="addBtn">추가</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/food.js"></script>
 
 </body>
 </html>
