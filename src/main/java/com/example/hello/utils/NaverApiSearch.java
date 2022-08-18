@@ -1,4 +1,4 @@
-package com.google.mvc.utils;
+package com.example.hello.utils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -10,8 +10,8 @@ import java.util.Map;
 
 public class NaverApiSearch {
     public static String newsApi(String search) {
-        String clientId = ""; //애플리케이션 클라이언트 아이디값"
-        String clientSecret = ""; //애플리케이션 클라이언트 시크릿값"
+        String clientId = "HnZgdajSVDcN3SLmAeFh"; //애플리케이션 클라이언트 아이디값"
+        String clientSecret = "Fjaw8P8vJ4"; //애플리케이션 클라이언트 시크릿값"
 
 
         String text = null;

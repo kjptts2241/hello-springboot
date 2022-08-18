@@ -1,0 +1,23 @@
+{{>layout/header}}
+
+<h2>검색리스트</h2>
+
+<div>
+<table class="table table-dark table-hover">
+  <thead>
+  <tr>
+    <th>검색어</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{ #slist }}
+  <tr>
+    <td>{{search}}</td>
+  </tr>
+  {{/slist}}
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>
