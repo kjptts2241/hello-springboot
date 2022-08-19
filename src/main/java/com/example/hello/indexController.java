@@ -43,13 +43,6 @@ public class indexController {
         return "searchlist";
     }
 
-    @GetMapping("/foodlist")
-    public String foodList(Model model) {
-        List<TbFood> list = foodService.findAll();
-        model.addAttribute("flist", list);
-        return "foodlist";
-    }
-
     @GetMapping("/foodrand")
     public String foodRand(Model model) {
         TbFood tbFood = foodService.findFoodRand();
@@ -57,11 +50,23 @@ public class indexController {
         return "foodrand";
     }
 
+    @GetMapping("/foodlist")
+    public String foodList(Model model) {
+        List<TbFood> list = foodService.findAll();
+        model.addAttribute("flist", list);
+        return "foodlist";
+    }
+
     @GetMapping("/movie")
     public String movieList(Model model) {
         List<String> movielist = movieService.movieList();
         model.addAttribute("movielist", movielist);
         return "movie";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
 //    @PostMapping("/login")
