@@ -15,10 +15,10 @@ public class TbFood {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false)
+    @Column(length = 256, nullable = false)
     private String name;
 
-    @Column(length = 500, nullable = false)
+    @Column(length = 11, nullable = false)
     private String img;
 
     @Builder

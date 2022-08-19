@@ -6,7 +6,23 @@
     <div class="container-fluid">
         <div class="row no-gutter">
 
-            <div id="movielist"></div>
+            <div>
+                {{ #movielist }}
+                {{movielist}}
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="{{movielist}}">
+                        <img src="{{movielist}}" class="img-responsive" alt="Image 1">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/movielist }}
+            </div>
 
         </div>
     </div>
@@ -25,8 +41,6 @@
         </div>
     </div>
 </div>
-
-<script src="js/movie.js"></script>
 
 </body>
 </html>
