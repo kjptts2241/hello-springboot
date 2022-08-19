@@ -17,12 +17,15 @@ var main = {
             contentType: 'application/json; charset-utf-8',
             data: JSON.stringify(data)
         }).done(function (data) {
-            //alert('검색어 저장 + 뉴스 검색 결과 입니다');
-            $("#news").html("");
-            $.each(data.items, function (i, field) {
-                var html = "<a href='" + field.link + "'>" + field.title + "<br>"
-                $("#news").append(html);
-            });
+            console.log(data);
+            // $("#news").html("");
+             $.each(data, function (i, field) {
+                  var html = "제목 : " + field.title +  "<br><br>"
+                      + field.description + "<br><br><br>"
+                      + "<a href='" + field.link + "'>링크</a><br>"
+                      + field.pubDate + "<br><br><br><br><br>"
+                  $("#news").append(html);
+              });
             //window.location.href = '/';
         }).fail(function (error) {
             alert(JSON.stringify(error));

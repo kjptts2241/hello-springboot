@@ -13,7 +13,6 @@ public class NaverApiSearch {
         String clientId = "HnZgdajSVDcN3SLmAeFh"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "Fjaw8P8vJ4"; //애플리케이션 클라이언트 시크릿값"
 
-
         String text = null;
         try {
             text = URLEncoder.encode(search, "UTF-8");
@@ -32,7 +31,7 @@ public class NaverApiSearch {
         String responseBody = get(apiURL,requestHeaders);
 
 
-//        System.out.println(responseBody);
+        System.out.println(responseBody);
         return responseBody;
     }
 

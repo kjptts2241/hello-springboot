@@ -2,18 +2,15 @@ package com.example.hello;
 
 import com.example.hello.domain.TbFood;
 import com.example.hello.domain.TbSearch;
-import com.example.hello.domain.TbUser;
 import com.example.hello.service.food.FoodService;
 import com.example.hello.service.movie.MovieService;
 import com.example.hello.service.search.SearchService;
-import com.example.hello.service.user.UserService;
-import com.example.hello.utils.MovieApi;
-import com.example.hello.web.dto.FoodSaveRequestDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 import java.util.List;
 
@@ -24,7 +21,6 @@ public class indexController {
     private final SearchService searchService;
     private final FoodService foodService;
     private final MovieService movieService;
-    private final UserService userService;
 
     @GetMapping("/")
     public String index() {
@@ -34,6 +30,11 @@ public class indexController {
     @GetMapping("/search")
     public String search() {
         return "search";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @GetMapping("/searchlist")
@@ -64,15 +65,4 @@ public class indexController {
         return "movie";
     }
 
-//    @GetMapping("/login")
-//    public String login() {
-//        return "login";
-//    }
-
-//    @PostMapping("/login")
-//    public TbUser login(Model model) {
-//        List<String> movielist = userService.findUser(model);
-//        model.addAttribute("movielist", movielist);
-//        return "movie";
-//    }
 }
