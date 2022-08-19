@@ -64,10 +64,10 @@ public class indexController {
         return "movie";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
+//    @GetMapping("/login")
+//    public String login() {
+//        return "login";
+//    }
 
 //    @PostMapping("/login")
 //    public TbUser login(Model model) {
