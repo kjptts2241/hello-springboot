@@ -9,9 +9,15 @@ var main = {
         });
     },
     save : function () {
+        var name = $("#name").val();
+        var img = $("#img").val();
+        if(name == "" || img == "") {
+            alert("내용을 입력해주세요");
+            return;
+        }
         var data = {
-            menuname: $("#menuname").val(),
-            imgsrc: $("#imgsrc").val()
+            name: name,
+            img: img
         };
         $.ajax({
             type: 'POST',
@@ -20,13 +26,12 @@ var main = {
             contentType: 'application/json; charset-utf-8',
             data: JSON.stringify(data)
         }).done(function (data) {
-            // if (data == 1) {
-            //     alert("메뉴를 추가 했습니다");
-            // } else {
-            //     alert("메뉴를 추가 실패\n관리자에게 문의");
-            // }
-            //window.location.href = '/';
-            alert(data);
+            if (data == null) {
+                alert("메뉴를 추가 실패\n관리자에게 문의");
+             } else {
+                alert("메뉴를 추가 했습니다");
+             }
+            window.location.href = '/foodlist';
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
