@@ -42,10 +42,7 @@ public class SearchService {
     public List<NewsApiReponseDto> news(SearchSaveRequestDto requestDto) throws JsonProcessingException {
         NewsApiReponseInfoDto dto = mapper.readValue(NaverApiSearch.newsApi(requestDto.getSearch()), NewsApiReponseInfoDto.class);
         List<NewsApiReponseDto> dtos = dto.getItems();
-        System.out.println("oooooooooo");
-        System.out.println(dtos);
-        System.out.println("oooooooooo");
-        // return NaverApiSearch.newsApi(requestDto.getSearch());
+        //return NaverApiSearch.newsApi(requestDto.getSearch());
         return dtos;
     }
 
