@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -21,6 +22,7 @@ public class indexController {
     private final SearchService searchService;
     private final FoodService foodService;
     private final MovieService movieService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index() {
